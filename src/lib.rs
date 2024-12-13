@@ -1,3 +1,6 @@
+#[doc(hidden)]
+pub mod print_inspect;
+
 use hyper::rt::{Read, ReadBuf, ReadBufCursor, Write};
 use std::io::{self, IoSlice};
 use std::pin::Pin;
@@ -45,7 +48,7 @@ where
                 let value = ready!(this.inner.poll_read(cx, buf.unfilled()));
                 let value = value.map(|_| buf.filled());
                 this.inspect.read(&value);
-                value.map(|buf| buf.len())
+                value.map(<[_]>::len)
             };
             match value {
                 Ok(len) => {
@@ -72,7 +75,7 @@ where
         this.inner.poll_write(cx, buf).map(|value| {
             let value = value.map(|len| &buf[..len]);
             this.inspect.write(&value);
-            value.map(|buf| buf.len())
+            value.map(<[_]>::len)
         })
     }
 
