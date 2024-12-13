@@ -1,0 +1,15 @@
+[package]
+name = "metrics-hyper"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+http = "1.2.0"
+hyper = "1.5.1"
+hyper-util = { version = "0.1.10", optional = true, features = ["client-legacy"] }
+metrics = "0.24.1"
+pin-project = "1.1.7"
+tower-service = "0.3.3"
+
+[features]
+hyper-util = ["dep:hyper-util"]
