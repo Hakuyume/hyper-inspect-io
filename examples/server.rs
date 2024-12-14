@@ -20,7 +20,7 @@ async fn main() {
             .serve_connection(
                 hyper_inspect_io::Io::new(
                     TokioIo::new(stream),
-                    hyper_inspect_io::print_inspect::PrintInspect,
+                    hyper_inspect_io::__examples::PrintInspect,
                 ),
                 hyper::service::service_fn(handler),
             )

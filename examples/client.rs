@@ -9,7 +9,7 @@ use tower::ServiceExt;
 async fn main() {
     let client = Client::builder(hyper_util::rt::TokioExecutor::new()).build(
         HttpConnector::new().map_response(|io| {
-            hyper_inspect_io::Io::new(io, hyper_inspect_io::print_inspect::PrintInspect)
+            hyper_inspect_io::Io::new(io, hyper_inspect_io::__examples::PrintInspect)
         }),
     );
 
