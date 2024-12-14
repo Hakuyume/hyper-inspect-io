@@ -3,14 +3,18 @@ name = "hyper-inspect-io"
 version = "0.1.0"
 edition = "2021"
 
-[dependencies]
-hyper = "1.5.1"
-hyper-util = { version = "0.1.10", optional = true, features = ["client-legacy"] }
-pin-project = "1.1.7"
+description = "An adapter for inspecting hyper's IO transports"
+license = "BSD-3-Clause"
+repository = "https://github.com/Hakuyume/hyper-inspect-io"
 
 [features]
 __examples = []
 hyper-util = ["dep:hyper-util"]
+
+[dependencies]
+hyper = "1.5.1"
+hyper-util = { version = "0.1.10", optional = true, features = ["client-legacy"] }
+pin-project = "1.1.7"
 
 [dev-dependencies]
 bytes = "1.9.0"
