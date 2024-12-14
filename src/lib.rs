@@ -136,3 +136,5 @@ where
 
 #[cfg(feature = "__examples")]
 pub mod __examples;
+#[cfg(test)]
+mod tests;

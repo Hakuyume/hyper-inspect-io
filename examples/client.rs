@@ -1,6 +1,6 @@
 use bytes::Bytes;
+use http::Request;
 use http_body_util::Empty;
-use hyper::Request;
 use hyper_util::client::legacy::connect::HttpConnector;
 use hyper_util::client::legacy::Client;
 use tower::ServiceExt;
